@@ -62,10 +62,13 @@ $(function(){
     },3000);
 
    
-    var screenWidth = window.innerWidth;
-
-     window.addEventListener("wheel",function(event){
+    
+    window.addEventListener("wheel",function(event){
         event.preventDefault();
+
+        var screenWidth = window.innerWidth;
+
+        
         if($html. is(':animated')) return;
 
         if (screenWidth <= 768) return;
