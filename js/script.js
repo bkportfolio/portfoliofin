@@ -1,8 +1,7 @@
 $(function(){
-    
-    
-    // 메인,헤더
-    window.setTimeout(function(){
+
+     // 메인,헤더
+     window.setTimeout(function(){
         $("#main1").animate({width : "100%"}, 1800, function(){
             $(".subinitial").animate({opacity :1}, 1000);
         })
@@ -19,6 +18,37 @@ $(function(){
     var pageIndex = 0;
     var windowHeight = $window.height();
     var lastPageIndex = $(".page").length -1;
+
+     
+    window.addEventListener("wheel",function(event){
+        event.preventDefault();
+
+        var screenWidth = window.innerWidth;
+
+        
+        if($html. is(':animated')) return;
+
+        if (screenWidth <= 768) return;
+
+        if(event.deltaY > 0){  
+            if(pageIndex >= lastPageIndex) return;
+            pageIndex++;
+        }
+        else if(event.deltaY < 0){ /*deltaY가 음수 이면 scroll up*/
+            if(pageIndex <= 0) return;
+            pageIndex--;
+        }
+
+        var posTop = windowHeight * pageIndex;
+
+        
+
+        $html.animate({scrollTop : posTop + 2});  /* 스크롤 탑을 postop에 맞춘다*/
+
+    },{passive : false});  /*passive 인 상태에서는 기본이벤트에 제거가 안되므로 false를 넣어야함*/
+    
+    
+   
     
 
 
@@ -30,7 +60,8 @@ $(function(){
         var viewport = $window.height();
         var scrollview =scrollTop + viewport;
 
-            if(skillsTop <= $(document).scrollTop() && $("#website1").offset().top > $(document).scrollTop()){
+            if(pageIndex >= 2){
+            // if(skillsTop <= $(document).scrollTop() && $("#website1").offset().top > $(document).scrollTop()){
                 $(".progress").addClass("on");
             }
             else{
@@ -62,33 +93,7 @@ $(function(){
     },3000);
 
    
-    
-    window.addEventListener("wheel",function(event){
-        event.preventDefault();
-
-        var screenWidth = window.innerWidth;
-
-        
-        if($html. is(':animated')) return;
-
-        if (screenWidth <= 768) return;
-
-        if(event.deltaY > 0){  
-            if(pageIndex >= lastPageIndex) return;
-            pageIndex++;
-        }
-        else if(event.deltaY < 0){ /*deltaY가 음수 이면 scroll up*/
-            if(pageIndex <= 0) return;
-            pageIndex--;
-        }
-
-        var posTop = windowHeight * pageIndex;
-
-        
-
-        $html.animate({scrollTop : posTop + 2});  /* 스크롤 탑을 postop에 맞춘다*/
-
-    },{passive : false});  /*passive 인 상태에서는 기본이벤트에 제거가 안되므로 false를 넣어야함*/
+   
 
     $window.on("resize",function(){
         windowHeight = $window.height();
