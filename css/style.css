@@ -1,10 +1,13 @@
 
 @media  screen and (min-width : 768px) {
 
+   
+    
+
     html,body{
         color: #333333;
         min-width: 1200px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'SUITE', sans-serif;
         height: 100%; width: 100%;
     }
     
@@ -164,6 +167,9 @@
         font-size: 18px;
     }
     
+    #profileSentence > ul > li:nth-child(1){
+        font-weight: bold;
+    }
     #profileSentence > p{
         line-height: 1.5;
         font-size: 18px;
@@ -318,7 +324,6 @@
         margin-left: 70px;
         font-weight: bold;
         font-size: 1.3em;
-        list-style: disc;
     }
     
     /* ---------------------------------------------------------------- */
@@ -680,7 +685,6 @@
         right: 0;
         top: 50%; transform: translateY(-50%);
         font-size: 20px;
-        font-family: sans-serif;
         line-height: 30px;
         text-align: center;
     }
