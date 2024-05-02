@@ -3,6 +3,7 @@
     body,html{
         font-size: 14px;
         overflow-x: hidden;
+        font-family: 'SUITE', sans-serif;
     }
 
    
@@ -75,7 +76,10 @@
         top: 104px; left:134px;
     }
     #maininitial > span:nth-child(6){
-        top: 165px; left:20px;
+        top: 155px; left:-70px;
+        white-space: nowrap;
+        font-size: 14px;
+        
     }
 
 
@@ -150,6 +154,10 @@
     #profileSentence > ul > li > span{
         font-size: 18px;
         line-height: 1.3;
+    }
+    
+    #profileSentence > ul > li:nth-child(1){
+        font-weight: bold;
     }
     
     #profileSentence > p{
@@ -317,7 +325,6 @@
         margin-left: 15px;
         font-weight: bold;
         font-size: 1.3em;
-        list-style: disc;
     }
 
 
@@ -560,7 +567,6 @@
         margin: 0 auto;
         padding-top: 20px;
         font-size: 18px;
-        font-family: sans-serif;
         line-height: 30px;
         text-align: center;
     }
